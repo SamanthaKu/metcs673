@@ -121,8 +121,6 @@ def calc_fib(x):
     print(f"- fibonacci of {x} is {calculated.get(x)}!")
     print(f"- fibonacci sequence up to {x}:\n\t{list(calculated.values())}")
 
-
-# 6. Write a program that determines if an inpufed year is a leap year. 
 def is_leap_year():
     """reference 
     https://learn.microsoft.com/en-us/office/troubleshoot/excel/determine-a-leap-year#how-to-determine-whether-a-year-is-a-leap-year
@@ -145,7 +143,6 @@ def is_leap_year():
 
 
 if __name__ == '__main__':
-
-    #comment out
+    # run assignment one
     main()
     
