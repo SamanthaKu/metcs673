@@ -2,7 +2,7 @@ __author__ = "Samantha Kuang"
 __email__ = "samxhk@bu.edu"
 
 def main():
-    """ The main function runs through questions 2 to 6. Without argument parser.
+    """ The main function runs through questions 2 to 6.
     """
     # to run question 2:
     print("QUESTION 2:\t")
@@ -56,8 +56,8 @@ def is_palindrome():
     """ Determines in the user input string is a palindrome. Must type q for program to exist.
 
     Args:
-        s (str): The string to check
-    
+        None: used input to ask for command line arguments instead of function parameters. 
+
     Returns:
         prints “The string <the string the user typed in> [is | is not] a palindrome."
     """
@@ -78,11 +78,10 @@ def is_palindrome():
 
 def alternate_lists():
     """ Take in two lists and checks if they're the same length.
-    Combine the two lists by alternating the elements.
-
+    Combine the two lists by alternating the elements. 
+    
     Args:
-        lst_one (list): first list
-        lst_two (list): second list
+        None: used input to ask for command line arguments instead of function parameters. 
 
     Returns:
         prints the alternating string
@@ -104,20 +103,28 @@ def alternate_lists():
 
     print(combine_alternate_lst)
 
+
 def calc_fib(x):
-    """
+    """Used Recursion to improve speed. Reduced to O(n^2) to O(n) by using a dictionary to remember the previously calculated values.
+
+    Args:
+        x: int
+
+    Returns:
+        prints fibonacci of x 
+        prints fibonacci sequence up to x
     """
     calculated = {1: 1, 2: 1}  # Initialize with base cases, starting with 1, 1
 
-    def fibonacci_of(n):
+    def fib_of(n):
         # Check if the value is already calculated
         if n in calculated:
             return calculated[n]
 
-        calculated[n] = fibonacci_of(n - 1) + fibonacci_of(n - 2)
+        calculated[n] = fib_of(n - 1) + fib_of(n - 2)
         return calculated[n]
 
-    fibonacci_of(x)
+    fib_of(x)
     print(f"- fibonacci of {x} is {calculated.get(x)}!")
     print(f"- fibonacci sequence up to {x}:\n\t{list(calculated.values())}")
 
@@ -130,16 +137,17 @@ def is_leap_year():
 
     """
     year= int(input("Provide a year to check if it is a leap year. "))
+    answer = f"{year} <is/isnot> a leap year"
     if year%4 == 0:
         if year% 100 == 0:
             if year%400 == 0:
-                return f"{year} IS a leap year."
+                return answer.replace('<is/isnot>', 'IS')
             else:
-                return f"{year} is NOT a leap year."
+                return answer.replace('<is/isnot>', 'IS NOT')
         else:
-            return f"{year} IS a leap year."
+            return answer.replace('<is/isnot>', 'IS')
     else:
-        return f"{year} is NOT a leap year."
+        return answer.replace('<is/isnot>', 'IS NOT')
 
 
 if __name__ == '__main__':
