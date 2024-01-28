@@ -1,9 +1,6 @@
 __author__ = "Samantha Kuang"
 __email__ = "samxhk@bu.edu"
 
-from argparse import ArgumentParser
-
-
 def main():
     """ The main function runs through questions 2 to 6. Without argument parser.
     """
